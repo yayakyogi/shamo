@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shamo/core/utils/transition_page.dart';
+import 'package:shamo/presentation/pages/home.dart';
 import 'package:shamo/presentation/pages/register.dart';
 import 'package:shamo/presentation/themes/themes.dart';
 import 'package:shamo/presentation/widgets/button_primary.dart';
@@ -26,12 +27,16 @@ class _LoginState extends State<Login> {
       setState(() {
         _isLoading = true;
       });
-      auth.getHttp().then((value) {
-        print(value);
-        setState(() {
-          _isLoading = false;
-        });
-      }).catchError((e) => print(e.toString()));
+      // auth.getHttp().then((value) {
+      //   print(value);
+      //   setState(() {
+      //     _isLoading = false;
+      //   });
+      // }).catchError((e) => print(e.toString()));
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Home()),
+      );
     }
 
     // widget header
