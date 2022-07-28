@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shamo/presentation/pages/message.dart';
 import 'package:shamo/presentation/themes/themes.dart';
 import 'package:shamo/presentation/widgets/button_category.dart';
 import 'package:shamo/presentation/widgets/card_arrival.dart';
@@ -275,8 +276,8 @@ class _HomeState extends State<Home> {
       );
     }
 
-    return Scaffold(
-      body: SafeArea(
+    Widget homePage() {
+      return SafeArea(
         child: ListView(
           children: [
             header(),
@@ -285,7 +286,27 @@ class _HomeState extends State<Home> {
             newArival(),
           ],
         ),
-      ),
+      );
+    }
+
+    // widget body
+    Widget body() {
+      switch (_indexBottomNav) {
+        case 0:
+          return homePage();
+        case 1:
+          return const Message();
+        case 2:
+          return const Text('Favorit');
+        case 3:
+          return const Text('Profile');
+        default:
+          return homePage();
+      }
+    }
+
+    return Scaffold(
+      body: body(),
       floatingActionButton: floatMenu(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: bottomNav(),
