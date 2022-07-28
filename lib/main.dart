@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
         useMaterial3: true,
-        scaffoldBackgroundColor: bgColor1,
+        scaffoldBackgroundColor: bgColor3,
       ),
       home: const SafeArea(child: Splashscreen()),
     );
