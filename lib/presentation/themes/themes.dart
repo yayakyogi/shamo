@@ -10,6 +10,7 @@ Color bgColor3 = const Color(0xff242231);
 Color primaryTextColor = const Color(0xffF1F0F2);
 Color secondaryTextColor = const Color(0xff504F5E);
 
+TextStyle fw_300 = const TextStyle(fontWeight: FontWeight.w300);
 TextStyle fw_400 = const TextStyle(fontWeight: FontWeight.w400);
 TextStyle fw_500 = const TextStyle(fontWeight: FontWeight.w500);
 TextStyle fw_600 = const TextStyle(fontWeight: FontWeight.w600);
