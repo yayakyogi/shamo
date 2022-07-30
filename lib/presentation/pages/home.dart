@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shamo/core/utils/transition_page.dart';
+import 'package:shamo/presentation/pages/cart.dart';
 import 'package:shamo/presentation/pages/message.dart';
 import 'package:shamo/presentation/themes/themes.dart';
 import 'package:shamo/presentation/widgets/button_category.dart';
@@ -264,15 +266,20 @@ class _HomeState extends State<Home> {
 
     // widget floatingActionButton
     Widget floatMenu() {
-      return Container(
-        width: 60,
-        height: 60,
-        padding: const EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: secondaryColor,
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(context, EnterPage(page: Cart()));
+        },
+        child: Container(
+          width: 60,
+          height: 60,
+          padding: const EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: secondaryColor,
+          ),
+          child: Image.asset('assets/icons/ic_cart.png'),
         ),
-        child: Image.asset('assets/icons/ic_cart.png'),
       );
     }
 
